@@ -1,0 +1,95 @@
+# Single Responsibility Principle (SRP) in Java
+
+## Introduction to SRP
+The **Single Responsibility Principle (SRP)** is the first principle in the SOLID design principles. In short, we call it **SRP**.
+
+### Definition:
+**A class should have only one reason to change**, meaning it should have only one responsibility.
+
+## Understanding SRP with an Example
+Let's consider an example where we are creating a class to manage **Invoices**.
+
+### **Bad Code (Violating SRP)**
+Here, the `Invoice` class handles multiple responsibilities:
+
+- It holds invoice details.
+- It generates invoices.
+- It saves invoices to a database.
+- It sends email notifications.
+
+```java
+public class Invoice {
+    private double amount;
+    private String email;
+
+    public Invoice(double amount, String email) {
+        this.amount = amount;
+        this.email = email;
+    }
+
+    public void generateInvoice() {
+        System.out.println("Invoice generated for amount: " + amount);
+    }
+
+    public void saveToDatabase() {
+        System.out.println("Saving invoice to database");
+    }
+
+    public void sendEmailNotification() {
+        System.out.println("Sending email notification for invoice");
+    }
+}
+```
+### **Problems with this Approach**
+1. **Multiple Responsibilities:** The `Invoice` class is responsible for multiple things – handling invoices, saving to a database, and sending notifications.
+2. **Difficult Maintenance:** If email functionality changes, the `Invoice` class must be modified.
+3. **Unit Test Complexity:** If one function changes, it can break unrelated functionality, making testing harder.
+
+## **Refactored Code (Following SRP)**
+We separate responsibilities into different classes:
+
+### **1. Invoice Class (Only Handles Invoice Data and Operations)**
+```java
+public class Invoice {
+    private double amount;
+
+    public Invoice(double amount) {
+        this.amount = amount;
+    }
+
+    public void generateInvoice() {
+        System.out.println("Invoice generated for amount: " + amount);
+    }
+}
+```
+
+### **2. InvoiceRepository Class (Handles Database Operations)**
+```java
+public class InvoiceRepository {
+    public void saveToDatabase(Invoice invoice) {
+        System.out.println("Saving invoice to database");
+    }
+}
+```
+
+### **3. EmailService Class (Handles Email Notifications)**
+```java
+public class EmailService {
+    public void sendEmailNotification(Invoice invoice) {
+        System.out.println("Sending email notification for invoice");
+    }
+}
+```
+
+### **Advantages of SRP Compliance**
+✅ **Separation of Concerns** – Each class has a single responsibility.
+✅ **Easier Maintainability** – Changes in one functionality do not impact others.
+✅ **Better Testing** – Each class can be tested independently.
+✅ **Scalability** – New features can be added without modifying unrelated code.
+
+## Conclusion
+The **Single Responsibility Principle (SRP)** ensures that each class has **only one reason to change**. By following SRP, we improve the maintainability, scalability, and testability of our code.
+
+---
+This was the first principle of SOLID. Stay tuned for more design principles!
+
