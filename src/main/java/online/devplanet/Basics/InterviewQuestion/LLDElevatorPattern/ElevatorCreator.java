@@ -8,11 +8,11 @@ public class ElevatorCreator {
 
     static {
         ElevatorCar elevatorCar1 = new ElevatorCar();
-        elevatorCar1.id=1;
+        elevatorCar1.elevatorCarId=1;
         ElevatorController elevatorController1 = new ElevatorController(elevatorCar1);
 
         ElevatorCar elevatorCar2 = new ElevatorCar();
-        elevatorCar2.id=2;
+        elevatorCar2.elevatorCarId=2;
         ElevatorController elevatorController2 = new ElevatorController(elevatorCar2);
 
         elevatorControllerList.add(elevatorController1);

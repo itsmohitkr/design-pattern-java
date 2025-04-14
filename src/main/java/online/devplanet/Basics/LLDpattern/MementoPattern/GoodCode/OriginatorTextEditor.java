@@ -1,6 +1,6 @@
 package online.devplanet.Basics.LLDpattern.MementoPattern.GoodCode;
 
-public class  TextEditor {
+public class OriginatorTextEditor {
     private String content;
 
     public void write(String content){
