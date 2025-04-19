@@ -12,5 +12,8 @@ public class NullObjectPattern {
         System.out.println("Vehicle Tank Capacity: " + vehicle2.getVehicleTankCapacity());
         System.out.println("Vehicle Seating Capacity: " + vehicle2.getVehicleSeatingCapacity());
 
+
+
+
     }
 }
