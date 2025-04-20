@@ -9,7 +9,5 @@ public class Main {
         remote.setCommand(new TurnOffAcCommand(ac));
 
         remote.pressButton();
-
-
     }
 }

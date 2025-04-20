@@ -1,4 +1,4 @@
-package online.devplanet.Basics.LLDpattern.SolidPrinciple.LSP.GoodCode;
+package online.devplanet.Basics.LLDpattern.SolidPrinciple.LSP.GoodCode.Example1;
 
 public class Main {
     public static void readAnyFile(ReadableFile file){

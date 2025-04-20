@@ -1,4 +1,4 @@
-package online.devplanet.Basics.LLDpattern.StrategyPattern;
+package online.devplanet.Basics.LLDpattern.StrategyPattern.Example1;
 
 class PaymentService{
 
